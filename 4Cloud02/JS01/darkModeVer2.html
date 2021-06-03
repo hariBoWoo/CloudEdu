@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body id="back">
+
+    <h1 id="title">Do You Want?</h1>
+    <p id="demo">Go Dark! Click the Button!</p>
+
+    <button onclick="dkMod()">Dark</button>
+    <button onclick="initMod()">Light</button>
+
+    <script>
+        function dkMod(){
+            document.getElementById("title").style.color = "white";
+            document.getElementById("demo").style.color = "white";
+
+            document.getElementById("back").style.backgroundColor="black";
+
+        }
+
+        function initMod(){
+            document.getElementById("title").style.color = "black";
+            document.getElementById("demo").style.color = "black";
+
+            document.getElementById("back").style.backgroundColor="white";
+        }
+
+
+    </script>
+
+</body>
+</html>

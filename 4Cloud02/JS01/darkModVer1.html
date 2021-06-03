@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="back">
+    <h1 id="title">Do You Want?</h1>
+
+    <p id="demo">Go Dark!</p>
+</div>
+
+<script>
+if (new Date().getHours() > 14 ) {
+    document.getElementById("title").style.color = "white";
+    document.getElementById("demo").style.color = "white";
+
+    document.getElementById("back").style.backgroundColor="black";
+}
+</script>
+
+</body>
+</html>
