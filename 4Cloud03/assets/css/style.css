@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------------------------------------below -> page0.html style */
+.about{
+  margin-bottom: 10px;
+}
+a{text-decoration: none;}
+#about img {
+  width: 300px;
+  height: auto;
+}
+.aimg{
+  float: left;
+  margin-right: 10px;
+}
+.atext{
+  margin-left: 30px;/*여기여기*/
+}
+
+footer{
+  margin: auto;
+  margin-top: 10px;
+  background-color: antiquewhite;
+  width: 150px;
+  padding: 15px 0;
+  border-radius: 20px;
+  text-align: center;
+
+}
+
+/* ------------------------------------------------------------------------------------------------below -> index.html style */
+
+/* Container for flexboxes 여기가 핵심!! 안에 들어오는것들 옆으로 붙음~*/
+.row {
+   display: flex;
+   flex-wrap: wrap;
+
+}
+
+/* Create three equal columns that sits next to each other */
+.row .column {
+    
+    /* flex: 1; */
+    height: 100px;
+    width: 30%;
+    text-align: center;
+    background-color: bisque;
+    margin: 1%;
+    
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 700px) {
+    .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+}

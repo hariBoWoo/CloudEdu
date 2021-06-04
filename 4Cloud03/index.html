@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List up</title>
+
+    <link href="assets/css/style.css" rel="stylesheet">    
+
+</head>    
+
+<body>
+
+    <section>
+        <div class="row" id="rowid"></div>
+        <!-- <div class="column" id="main0"><p>MainText</p></div> -->
+    </section>
+
+    <script>
+
+    const text = '{"students":['+
+        '{"name":"진희","age":"21"},'+
+        '{"name":"진","age":"22"},'+
+        '{"name":"뷔","age":"23"},'+
+        '{"name":"뽀로로","age":"24"},'+
+        '{"name":"루피","age":"25"},'+
+        '{"name":"나미","age":"26"},'+
+        '{"name":"크롱","age":"27"},'+
+        '{"name":"에디","age":"28"},'+
+        '{"name":"상디","age":"29"},'+
+        '{"name":"쵸파","age":"20"},'+
+        '{"name":"녹차","age":"21"},'+
+        '{"name":"커피","age":"22"},'+
+        '{"name":"홍차","age":"23"},'+
+        '{"name":"얼그레이","age":"24"},'+
+        '{"name":"수박","age":"25"},'+
+        '{"name":"귤","age":"26"},'+
+        '{"name":"사과","age":"27"},'+
+        '{"name":"딸기","age":"28"},'+
+        '{"name":"당근","age":"29"},'+
+        '{"name":"비트","age":"20"},'+
+        '{"name":"참외","age":"21"},'+
+        '{"name":"갈치","age":"22"},'+
+        '{"name":"고등어","age":"23"},'+
+        '{"name":"산딸기","age":"24"}]}'; 
+
+        const obj =  JSON.parse(text);
+
+        var vi = "";
+        var m = "";
+
+        for(var i=0; i<obj.students.length; i++){
+            var modulBox = '<div class="column" id="main"+'+i+'>'+
+                '<p>'+obj.students[i].name+'</p>'+
+                '<p>'+ '<a class="btn" href="pages/page'+i+'.html">'+'더보기'+'</a>'+'</p>'+ 
+                '</div>'; //id="'main'+i"
+
+            //console.log(modulBox);            
+            m += modulBox;            
+        }
+        document.getElementById("rowid").innerHTML = m; //안 덮어쓰이도록 여기에 위치한 것
+
+    </script>
+
+</body>
+</html>
+

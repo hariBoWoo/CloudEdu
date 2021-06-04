@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MoreView</title>
+
+    <link href="../assets/css/style.css" rel="stylesheet">    
+
+</head>    
+
+<body>
+    <h1>Information</h1>
+    <section id="about" >
+        <div>
+            <div class="aimg">
+                <img src="../assets/img/s1.jpg" alt="01"/>
+            </div>
+            <br/>
+            <div class="atext">
+                <h3>  이름 : </h3>
+                <div id="name"></div>
+                <h3>  나이 : </h3>
+                <div id="age"></div>
+            </div>
+        </div>
+        
+
+    </section>
+
+
+    <script>
+        var myUrl = window.location.pathname;
+        var myUrlSplit = myUrl.split("/");
+        var myId = myUrlSplit[myUrlSplit.length-1];
+        var id = myId.split(".");
+        var id = id[0];
+        var s = id.substring(4);
+        console.log(s);
+        
+
+        const text = '{"students":['+
+        '{"name":"진희","age":"21"},'+
+        '{"name":"진","age":"22"},'+
+        '{"name":"뷔","age":"23"},'+
+        '{"name":"뽀로로","age":"24"},'+
+        '{"name":"루피","age":"25"},'+
+        '{"name":"나미","age":"26"},'+
+        '{"name":"크롱","age":"27"},'+
+        '{"name":"에디","age":"28"},'+
+        '{"name":"상디","age":"29"},'+
+        '{"name":"쵸파","age":"20"},'+
+        '{"name":"녹차","age":"21"},'+
+        '{"name":"커피","age":"22"},'+
+        '{"name":"홍차","age":"23"},'+
+        '{"name":"얼그레이","age":"24"},'+
+        '{"name":"수박","age":"25"},'+
+        '{"name":"귤","age":"26"},'+
+        '{"name":"사과","age":"27"},'+
+        '{"name":"딸기","age":"28"},'+
+        '{"name":"당근","age":"29"},'+
+        '{"name":"비트","age":"20"},'+
+        '{"name":"참외","age":"21"},'+
+        '{"name":"갈치","age":"22"},'+
+        '{"name":"고등어","age":"23"},'+
+        '{"name":"산딸기","age":"24"}]}'; 
+
+        const obj =  JSON.parse(text);
+
+        document.getElementById("name").innerHTML = obj.students[s].name;
+        document.getElementById("age").innerHTML = obj.students[s].age;
+
+    </script>
+
+    
+</body>
+<footer>
+    <div>
+        <a href="../index.html">HOME</a>
+    </div>
+</footer>
+</html>
