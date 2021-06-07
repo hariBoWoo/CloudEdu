@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">   
+
+</head>    
+
+<body>
+    <div class="container">
+        <div class="row text-center" style="margin: 20px 0;">
+            <div class="col-12">
+                <h2 style="font-family: 'ZCOOL KuaiLe', cursive; font-size: 80px;"><b>Spongebob</b></h2>
+            </div>
+        </div>
+        <button class="btn btn-primary" style="margin-bottom: 20px;">Toggle Button</button>
+
+        <div class="row" id="rowid">
+            <!-- 핸드폰 사이즈 그리드 12개를 쓰겠다는 뜻이다, 탭은 6칸, 랩탑은 4칸 -->
+            <!-- <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
+                <div class="card" style="width: 100%; margin-bottom: 20px;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div> 모듈화 해버림-->
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- J Quiry CDN Goolge-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+   <script>
+    const text = '{"students":['+
+        '{"name":"RM","age":"21", "img":"assets/img/s"},'+
+        '{"name":"슈가","age":"22", "img":"assets/img/s"},'+
+        '{"name":"뷔","age":"23", "img":"assets/img/s"},'+
+        '{"name":"뽀로로","age":"24", "img":"assets/img/s"},'+
+        '{"name":"루피","age":"25", "img":"assets/img/s"},'+
+        '{"name":"나미","age":"26", "img":"assets/img/s"},'+
+        '{"name":"크롱","age":"27", "img":"assets/img/s"},'+
+        '{"name":"에디","age":"28", "img":"assets/img/s"},'+
+        '{"name":"상디","age":"29", "img":"assets/img/s"},'+
+        '{"name":"쵸파","age":"20", "img":"assets/img/s"},'+
+        '{"name":"녹차","age":"21", "img":"assets/img/s"},'+
+        '{"name":"커피","age":"22", "img":"assets/img/s"},'+
+        '{"name":"홍차","age":"23", "img":"assets/img/s"},'+
+        '{"name":"얼그레이","age":"24", "img":"assets/img/s"},'+
+        '{"name":"수박","age":"25", "img":"assets/img/s"},'+
+        '{"name":"귤","age":"26", "img":"assets/img/s"},'+
+        '{"name":"사과","age":"27", "img":"assets/img/s"},'+
+        '{"name":"딸기","age":"28", "img":"assets/img/s"},'+
+        '{"name":"당근","age":"29", "img":"assets/img/s"},'+
+        '{"name":"비트","age":"20", "img":"assets/img/s"},'+
+        '{"name":"참외","age":"21", "img":"assets/img/s"},'+
+        '{"name":"갈치","age":"22", "img":"assets/img/s"},'+
+        '{"name":"고등어","age":"23", "img":"assets/img/s"},'+
+        '{"name":"산딸기","age":"24", "img":"assets/img/s"}]}'; 
+
+        const obj =  JSON.parse(text);
+
+        var vi = "";
+        var m = "";
+
+        // 모듈화 하려면 반복되는 부분을 모듈화 해야하고 방법은 아래와 같음
+        for(var i=0; i<obj.students.length; i++){
+            var modulBox = '<div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">'+
+                    '<div class="card" style="width: 100%; margin-bottom: 20px;">'+
+                    '<img src="'+obj.students[i].img+i+'.jpg" class="card-img-top" alt="...">'+
+                    '<div class="card-body">'+
+                    '<h5 class="card-title" id="objName'+i+'">'+obj.students[i].name+'</h5>'+
+                    '<p class="card-text" id="objAge'+i+'">'+obj.students[i].age+'</p>'+
+                    //위에 모달을 사용하는 법 : data-bs-toggle="modal" data-bs-target="#exampleModal" 를 복붙해줌
+                    '<a href="#" onclick = "console.log('+i+')" class="btn btn-primary" id="btn'+i+'" data-bs-toggle="modal" data-bs-target="#exampleModal">'+'View'+'</a>'+
+                    '</div>'+'</div>'+'</div>';  
+
+            m += modulBox; 
+
+                       
+        }
+       
+        
+
+        // 위를 더 쉽게 작성하는 법(=JS로 만들기) : ~모양 에 있는 `로 감싸고 변수는 ${}로 
+        // `<div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
+        //         <div class="card" style="width: 100%; margin-bottom: 20px;height: inherit;;">
+        //             <img src="..." class="card-img-top" alt="...">
+        //             <div class="card-body">
+        //                 <h5 class="card-title">${obj.students[i].name}</h5>
+        //                 <p class="card-text">${obj.students[i].age}</p>
+        //                 <a href="#" class="btn btn-primary">Go somewhere</a>
+        //             </div>
+        //         </div>
+        // </div>` 
+        
+
+        document.getElementById("rowid").innerHTML = m;
+        
+
+    </script>
+    
+    
+    <!-- Toggle BUTTON -->
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("h2").toggle();
+          });
+        });
+    </script>
+
+</body>
+</html>
+
