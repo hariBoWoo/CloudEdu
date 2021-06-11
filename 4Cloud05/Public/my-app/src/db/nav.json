@@ -1,0 +1,102 @@
+{
+    "menu" : [
+        {
+            "id" : 1,
+            "name" : "HOME",
+            "url" : "/"
+        },
+        {
+            "id" : 2,
+            "name" : "FEATURES",
+            "url" : "/features"
+        },
+        {
+            "id" : 3,
+            "name" : "PRICING",
+            "url" : "/pricing"
+        },
+        {
+            "id" : 4,
+            "name" : "FAQs",
+            "url" : "/faqs"
+        },
+        {
+            "id" : 5,
+            "name" : "ABOUT",
+            "url" : "/about"
+        }
+    ],
+    "sidemenu" : [
+        {
+            "id" : 1,
+            "name" : "fas fa-search",
+            "url" : "/"
+        },
+        {
+            "id" : 2,
+            "name" : "fas fa-random",
+            "url" : "/"
+        },
+        {
+            "id" : 3,
+            "name" : "fas fa-shopping-cart",
+            "url" : "/shoppingCart"
+        },
+        {
+            "id" : 4,
+            "name" : "fas fa-user",
+            "url" : "/"
+        },
+        {
+            "id" : 5,
+            "name" : "fas fa-heart",
+            "url" : "/"
+        }
+    ],
+    "category" : [
+        {
+            "id" : 1,
+            "name" : "fashion"
+        },
+        {
+            "id" : 2,
+            "name" : "men"
+        },
+        {
+            "id" : 3,
+            "name" : "women"
+        }
+    ],
+    "brand" : [
+        {
+            "id" : 1,
+            "name" : "Apple",
+            "img" : "fab fa-apple",
+            "content" : "스티브 잡스의 왕국이 무너지는중. 예쁜데 비싸다."
+        },
+        {
+            "id" : 2,
+            "name" : "Amazon",
+            "img" : "fab fa-amazon",
+            "content" : "클라우드의 큰손 아마존. 아마존 쇼핑몰도 최고지!"
+        }, 
+        {
+            "id" : 3,
+            "name" : "Bitconin",
+            "img" : "fab fa-bitcoin",
+            "content" : "2030세대의 계급넘어서기 수단. 자본의 계급이 있다는 사실을 알수있다."
+        },  
+        {
+            "id" : 4,
+            "name" : "Github",
+            "img" : "fab fa-github-alt",
+            "content" : "아이콘이 귀여워요. 깃허브 좀 최고인듯?!?"
+        },
+        {
+            "id" : 5,
+            "name" : "Snapchat",
+            "img" : "fab fa-snapchat",
+            "content" : "유령 모양이 귀여워서 가져왔다. 채팅 앱인거 같은데 나는 써보지 않았다 이말이야"
+        }
+    ]
+}
