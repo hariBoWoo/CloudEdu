@@ -1,10 +1,14 @@
-import React from 'react'; 
+import React, {useState,useEffect} from 'react';
 import CategoryData from '../../../db/nav.json';
 
 export default function ShowItemUp({setCategoryName}){
+    
     const handleClick = (e) => {
         setCategoryName(e.target.value);
     }
+
+
+
 
     return(
         

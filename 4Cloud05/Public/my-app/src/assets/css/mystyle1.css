@@ -1,0 +1,170 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'EB Garamond', serif;
+
+}
+section{
+    margin: 80px 0px;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 32rem;
+  }
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  
+/* -----Section ID brand ---------*/
+#brand {
+    font-family: 'EB Garamond', serif;
+    font-family: 'Noto Serif KR', serif;
+}
+#brand .brandImg{
+    margin-top: -20px;
+    font-size: 4rem;
+    color: #ff7473;
+  }
+
+#brand .brandTitle{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+#brand .brandText{
+    font-size: 1.0rem;
+}
+
+/* -----------Section ID deal --------------*/
+#deal {
+    font-family: 'EB Garamond', serif;
+
+}
+#deal .title h3{
+    font-size: 2rem;
+    color: gold;
+    text-align: center;
+}
+#deal ul li{
+    padding-right: 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+#deal ul li:last-child{
+    padding-right: 0px;
+}
+#deal .productImg{
+    width: 100%;
+    height: 350px;
+    background-color: rgb(247, 209, 115);
+}
+#deal .pTitle{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+#deal .pScore{
+    margin-top: -10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(243, 195, 73);
+}
+#deal .pPrice{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#deal .pPrice span{
+    padding-left: 20px;
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+/* -----------Section ID blog --------------*/
+
+#blog {
+    font-family: 'EB Garamond', serif;
+
+}
+#blog .title h3{
+    font-size: 2rem;
+    color: lightsalmon;
+    text-align: center;
+}
+#blog .blogImg{
+    width: 100%;
+    height: 300px;
+    background-color: sandybrown;
+
+}
+#blog .blogTxt{
+    width: 90%;
+    margin: 5%;
+    background-color: silver;
+
+    position: relative;
+    top : -80px
+}
+
+#blog .blogTitle{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
+#blog .blogAuth{
+    text-align: center;
+    font-size: 1.0rem;
+
+}
+
+footer .footer{
+    background-color: rgb(128, 128, 125);
+    height: 400px;
+    padding: 100px 0;
+    color: rgb(255, 162, 123);
+
+}
+
+footer .footerLogo{
+    font-size: 1.8rem;
+    font-weight: bolder;
+    /* line-height: 자간; */
+}
+footer ul{
+    list-style: none;
+    
+}
+footer ul li a{
+    color: coral;
+    text-decoration: none;
+    
+}
+footer p{
+    font-size: 1.1rem;
+    font-family: 'EB Garamond', serif;
+}

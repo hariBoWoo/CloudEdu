@@ -1,11 +1,22 @@
-import React, {useState} from 'react'; 
-import BlogData from '../../../../../db/blog-featured.json';
+import React, {useState, useEffect} from 'react'; 
+// import BlogData from '../../../../../db/blog-featured.json';
 import {Link } from "react-router-dom";
 
 
 export default function Bloglist(){
 
-    const [newBlogData, setNewBlogDAta] = useState(BlogData);
+    const [newBlogData, setNewBlogDAta] = useState([]);
+
+    useEffect(()=>{
+        fetch("http://localhost:3005/blog")
+        .then(res => {
+            return res.json();
+        })
+        .then(data =>{
+            setNewBlogDAta(data)
+        })
+    },[]);
+
     const blogList = newBlogData.map(item => (
         
         <div key={item.id} className="col-12 col-md-4 mb-4">

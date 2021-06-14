@@ -1,12 +1,24 @@
-import React, {useState} from 'react';
-import productData from '../../../../../db/products.json';
+import React, {useState,useEffect} from 'react';
 import Rating from './ProductRating';
 import {Link} from "react-router-dom";
 
-
 export default function ShowItem({categoryName}){
 
-    const [newData, setnewData] = useState(productData); //productData를 받아와서 newData에 넣어서 사용
+    const [newData, setNewData] = useState([]); 
+    
+    // jsonServer를 돌리고 있는중에 json 파일에서 데이터를 가져와서 사용하는것이다. 즉, 서버가 안 돌고 있으면 가져올수 없음
+    useEffect(()=>{
+        fetch("http://localhost:3005/product")
+        .then(res => {
+            return res.json();
+        })
+        .then(data =>{
+            setNewData(data)
+        })
+    },[]); //jsonServer 를 쓰기때문에 newData에 들어갈 데이터를 따로 처리해줘야한다.
+
+
+
     console.log(categoryName);
     //카테고리 필터링하기 조건문임! 0 ? t : f
     const searchData = categoryName

@@ -1,19 +1,54 @@
-import React from 'react';
-import menuData from '../../../db/nav.json';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 
+export default function Menu(){
 
-export default function Menu() {
+    const [ menuData, setMenuData ] = useState([]);
 
-    const menuList = menuData.menu.map(item => (
-        <li key={item.id} className="nav-link"><Link to={item.url}>{item.name}</Link></li>
+    useEffect(() => {
+        fetch("http://localhost:3005/menu")
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setMenuData(data);
+        })
+        //.catch(error => console.log(error))
+    },[]);
 
-    ))
-    // map으로 쭉 반복해서 뿌려주는데 슬라이스로 원하는 정도를 조절가능 : )).slice(0,2);
-
+    const menuList = menuData.map(item => {
+        if (item.children) {
+            return(
+                <li key={item.id} className="px-4">
+                    <Link to={item.url}>{item.name}<i className="fa fa-angle-down"></i></Link>
+                    <ul className="mega-menu">
+                        <li>
+                            <ul>
+                                {item.children.map(subitem => (
+                                    <li key={subitem.id}><Link to ={subitem.url}>{subitem.name}</Link></li>
+                                ))}
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            );
+        } else {
+            return(
+                <li key={item.id} className="px-4"><Link to={item.url}>{item.name}</Link></li>
+            );
+        }
+    });
+    
     return(
-        <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            {menuList}
-        </ul>
+        <div className="col-xl-8 col-lg-8 d-none d-lg-block">
+            <div className=" main-menu  ">
+                <nav>
+                    <ul>
+                        {menuList}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
     );
 }

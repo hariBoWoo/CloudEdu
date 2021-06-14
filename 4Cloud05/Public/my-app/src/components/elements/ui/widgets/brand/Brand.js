@@ -1,10 +1,22 @@
-import React, {useState} from 'react'; 
-import BrandData from '../../../../../db/nav.json';
+import React, {useState,useEffect} from 'react'; 
+// import BrandData from '../../../../../db/nav.json';
 
 export default function Brand(){
 
-    const [newBrand, setNewBrand] = useState(BrandData);
-    const brandList = newBrand.brand.map( item => (
+    const [newBrand, setNewBrand] = useState([]);
+
+    useEffect(()=>{
+        fetch("http://localhost:3005/brand")
+        .then(res => {
+            return res.json();
+        })
+        .then(data =>{
+            setNewBrand(data)
+        })
+    },[]); 
+
+
+    const brandList = newBrand.map( item => (
         // 반복될 부분을 모듈화~
         <div key={item.id} className="col-12 col-md-3">
             <div className="row">

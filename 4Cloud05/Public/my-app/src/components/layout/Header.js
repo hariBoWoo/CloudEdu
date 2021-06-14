@@ -1,18 +1,16 @@
 import React from 'react'; 
 import Nav from '../elements/ui/Nav';
 import Banner from '../elements/ui/Banner';
+import HeaderTop from '../elements/ui/HeaderTop';
 
 
 export default function Header(){
     return (
         
-        <div className="container-fluid" style={{padding: "0px"}}>
-            
-            <Nav/>
-            <Banner/>
-
-            
-        </div>
+        <header className="header-area clearfix">
+                <HeaderTop/>
+                <Nav/>
+        </header>
         
     );
 }
