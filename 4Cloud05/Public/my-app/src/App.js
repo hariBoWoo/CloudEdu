@@ -9,12 +9,17 @@ import Brand from './components/elements/ui/widgets/brand/Brand';
 import Home from './components/pages/Home/Home';
 import Features from './components/pages/Features/Features';
 import ProductDetail from './components/pages/ProductDetail/ProductDetail';
+import WishLish from './components/pages/wishList/WishList';
+import Compare from './components/pages/compare/Compare';
+
 import "./assets/css/animate.css";
 import "./assets/css/bootstrap.css";
 import "./assets/css/googlefont.css";
 import "./assets/css/mystyle1.css";
 import "./assets/css/style.css";
 import "./assets/icons8/css/line-awesome.min.css";
+import ToTop from './utillitles/ToTop';
+
 // import "./assets/css/layout.css";
 
 
@@ -29,13 +34,17 @@ function App() {
 // 순서는 위에서 아래로 우선순위가 있기때문에 exact 안적어주면 다 home으로 가므로 exact로 정확히 일치하는 것들만 넘겨주도록 해야한다. 그리고 없는 페이지를 입력해서 들어오면 젤 밑에 notFound를 하나더 만들어서 그쪽으로 넘어가게 할 수 있다.
 return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/"><Home/></Route>
-        <Route exact path="/features"><Features/></Route>
-        <Route exact path="/productdetail/:id"><ProductDetail/></Route>
-        {/* <Route exact path="/productdetail/:id"><ProductDetail/></Route> */}
+      <ToTop>
+        <Switch>
+          <Route exact path="/"><Home/></Route>
+          <Route exact path="/features"><Features/></Route>
+          <Route exact path="/productdetail/:id"><ProductDetail/></Route>
+          <Route exact path="/wishlist"><WishLish/></Route>
+          <Route exact path="/compare"><Compare/></Route>
 
-      </Switch>
+
+        </Switch>
+      </ToTop>
     </BrowserRouter>
   );
 }

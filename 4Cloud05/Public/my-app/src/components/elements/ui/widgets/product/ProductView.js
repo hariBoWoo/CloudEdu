@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import Rating from './Rating';
+import Rating from '../../Rating';
 
 
 export default function ProductView({categoryName}){
@@ -38,8 +38,14 @@ export default function ProductView({categoryName}){
                     <img className="hover-img" src="./fashion/6.jpg" alt="" />
                 </Link>
                 <div className="product-img-badges">
-                    <span className="pink">-{item.discount}</span>
-                    <span className="purple">new</span>
+                    {
+                        item.discount > 0 ? <span className="pink">-{item.discount}%</span> : ""
+                    }
+                    
+                    {
+                        item.new ? <span className="purple">new</span> : ""
+                    }
+                    
                 </div>
                 <div className="product-action">
                     <div className="pro-same-action pro-wishlist">
@@ -64,7 +70,9 @@ export default function ProductView({categoryName}){
                 </div>
                 <div className="product-price">
                     <span>{item.price}</span> 
-                    <span className="old">{(item.price * ((100-item.discount)/100)).toFixed(2)}</span>
+                    {
+                        item.discount > 0 ? <span className="old">{(item.price * ((100+item.discount)/100)).toFixed(2)}</span> : ""
+                    }
                 </div>
             </div>
         </div>

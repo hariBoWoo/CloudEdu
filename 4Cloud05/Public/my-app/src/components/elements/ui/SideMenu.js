@@ -17,7 +17,7 @@ export default function SideMenu(){
     },[]);
     
     const menuList = menuData.map((item, index) => (
-        <div className="same-style header-search">
+        <div key={item.id} className="same-style header-search">
             <Link to = {item.url}><i className={item.name}></i><span className="count-style">{item.count}</span></Link>
         </div>
     ))

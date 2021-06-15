@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import ShowItemUP from '../elements/ui/ShowItemUp';
 import TabMenu from '../elements/ui/TabMenu';
 import ShowItemTitle from '../elements/ui/ShowItemTitle';
-import ProductView from '../elements/ui/ProductView';
+import ProductView from '../elements/ui/widgets/product/ProductView';
 
 
 export default function Deal(){

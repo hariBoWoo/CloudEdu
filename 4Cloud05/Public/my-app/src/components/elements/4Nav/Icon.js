@@ -1,5 +1,5 @@
 import React from 'react';
-import menuData from '../../../../db/nav.json';
+import menuData from '../../../db/nav.json';
 
 
 export default function Icon() {
