@@ -7,6 +7,8 @@ export default function PDRMiddle({data}){
     const { id } = useParams();
 
     const [ varData, setVardata ] = useState([]);
+    const [color, setColor ] = useState("");
+    const [ size, setSize] = useState("");
 
     useEffect(()=>{
         fetch(`http://localhost:3005/product/${id}`) 
@@ -24,8 +26,12 @@ export default function PDRMiddle({data}){
             
             <ColorNSize
                 vData = {varData.variation}
+                setColor = {setColor}
+                setSize = {setSize}
             />
-            <AddBuyNCart/>
+            <AddBuyNCart
+                color = {color}
+                size = {size}/>
 
         </Fragment>
     );

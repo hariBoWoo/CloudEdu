@@ -2,9 +2,18 @@ import { useState, useEffect } from "react";
 import {useParams} from 'react-router-dom';
 
 
-export default function AddBuyNCart(){
+export default function AddBuyNCart({ color, size}){
     const { id } = useParams();
     const [datas, setDatas] = useState([]);
+    const [count, setCount]=useState(1);
+
+    const handleCountAdd = () =>{
+        setCount(count+1)
+    }
+    const handleCountSub = () =>{
+        count >1 ? setCount(count-1) : setCount(1)
+    }
+
 
     useEffect(() => {
         fetch(`http://localhost:3005/product/${id}`)
@@ -34,8 +43,12 @@ export default function AddBuyNCart(){
                     name: data.name,
                     image: data.image,
                     price: data.price,
-                    discount: data.discount
+                    discount: data.discount,
+                    qty : count,
+                    color : color,
+                    size : size
                 }),
+                // 임의로 json 데이터를 넣을수 있다는 점 : siz와 color를 넣을수 있는 포인트 (46,47,48번째 줄)
             })
         }).then(
             alert("success")
@@ -96,9 +109,9 @@ export default function AddBuyNCart(){
     return(
         <div className="pro-details-quality">
             <div className="cart-plus-minus">
-                <button className="dec qtybutton">-</button>
-                <input className="cart-plus-minus-box" type="text" readonly="" value="1"/>
-                <button className="inc qtybutton">+</button>
+                <button className="dec qtybutton" onClick={()=>handleCountSub()}>-</button>
+                <input className="cart-plus-minus-box" type="text" readonly="" value={count}/>
+                <button className="inc qtybutton" onClick={()=>handleCountAdd()}>+</button>
             </div>
             
             <div className="pro-details-cart btn-hover" >

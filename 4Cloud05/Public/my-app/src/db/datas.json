@@ -63,32 +63,36 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "name": "Lorem ipsum jacket",
+      "id": "88",
+      "name": "Lorem ipsum kids one",
       "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
+        "/assets/img/product/fashion/23.jpg",
+        "/assets/img/product/fashion/24.jpg",
+        "/assets/img/product/fashion/25.jpg",
+        "/assets/img/product/fashion/26.jpg",
+        "/assets/img/product/fashion/27.jpg"
       ],
       "price": 12.45,
-      "discount": 10
+      "discount": 10,
+      "qty": 2,
+      "color": "brown",
+      "size": ""
     },
     {
-      "id": "3",
-      "name": "Lorem ipsum jacket",
+      "id": "2",
+      "name": "Lorem ipsum coat",
       "image": [
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
+        "/assets/img/product/fashion/2.jpg",
+        "/assets/img/product/fashion/4.jpg",
+        "/assets/img/product/fashion/5.jpg",
+        "/assets/img/product/fashion/7.jpg",
         "/assets/img/product/fashion/9.jpg"
       ],
-      "price": 17.45,
-      "discount": 40,
-      "shortDescription": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-      "rating": 5
+      "price": 18.5,
+      "discount": 15,
+      "qty": 6,
+      "color": "blue",
+      "size": ""
     }
   ],
   "wish": [

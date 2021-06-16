@@ -1,8 +1,8 @@
 import React, {useEffect,useState} from 'react';
 
-export default function ColorNSize({vData}){
+export default function ColorNSize({vData, setColor, setSize}){
 
-
+    const [isCheck, setIsCheck] = useState(false);
 
     return(
         <div className="pro-details-size-color">
@@ -12,7 +12,7 @@ export default function ColorNSize({vData}){
                     {  
                         vData ? vData.map( item => (
                             <label className={`pro-details-color-content--single ${item.color}`}>
-                                <input type="radio" name="product-color" value={item.color} checked="" />
+                                <input type="radio" name="product-color" value={item.color} checked={isCheck} onClick={()=>setColor(item.color)} />
                                 <span className="checkmark"></span>
                             </label>
                         ))

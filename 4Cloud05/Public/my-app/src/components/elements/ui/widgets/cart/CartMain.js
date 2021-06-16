@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 export default function CartMain(){
 
     const [cartDatas, setCartDatas] = useState([]);
+    const [count, setCount]=useState(1);
+
     
 
     useEffect(()=>{
@@ -34,6 +36,18 @@ export default function CartMain(){
         )
     }
 
+    const addCount = () => {
+        setCount(count+1)
+    }
+    const subCount = (i) => {
+        if(i>1){
+            setCount( i - 1 )
+        }else{
+            setCount(1)
+        }
+        
+    }
+
     const cartList = cartDatas.map((item, index)=>(
         <tr key={index}>
             <td className="product-thumbnail">
@@ -52,12 +66,12 @@ export default function CartMain(){
             </td>
             <td className="product-quantity">
                 <div className="cart-plus-minus">
-                    <button className="dec qtybutton">-</button>
-                    <input className="cart-plus-minus-box" type="text" readonly="" value="1"/>
-                    <button className="inc qtybutton">+</button>
+                    <button className="dec qtybutton" onClick={()=>subCount(count)}>-</button>
+                    <input className="cart-plus-minus-box" type="text" readonly="" value={count}/>
+                    <button className="inc qtybutton" onClick={()=>addCount()}>+</button>
                 </div>
             </td>
-            <td className="product-subtotal">$15.72</td>
+            <td className="product-subtotal">${((item.price * (100-item.discount)/100) * count).toFixed(2)}</td>
             <td className="product-remove"><button onClick={()=>handleDelete(item.id)}><i className="fa fa-times"></i></button></td>
         </tr>
     ))
