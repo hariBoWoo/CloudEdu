@@ -3,7 +3,8 @@ import {BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import Header from '../../layout/Header';
 import Footer from '../../layout/Footer';
 import Bread from '../../elements/ui/Bread';
-import CompareMain from '../../elements/ui/widgets/compare/CompareMain';
+import CompareTable from '../../elements/ui/widgets/compare/CompareTable';
+// import CompareMain from '../../elements/ui/widgets/compare/CompareMain';
 
 export default function Compare(){
 
@@ -21,7 +22,8 @@ export default function Compare(){
                 productUrl=''
             />
             
-            <CompareMain/>
+            {/* <CompareMain/> */}
+            <CompareTable/>
             
            
 

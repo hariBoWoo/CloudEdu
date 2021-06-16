@@ -33,7 +33,7 @@ export default function CompareMain(){
             })
         )
     }
-
+// <td> 로 나눠서 뿌려주고 3번만 나오도록 해주면 됨 반복 그게 좀 달라서... 계속 들어오는건 map 슬라이스로 3개만 보이도록 조절
     const compareList = compareDatas.map((item, index)=>(
         <tbody>
             <tr>
@@ -42,12 +42,12 @@ export default function CompareMain(){
                     <div className="compare-remove">
                         <button onClick={()=> handleDelete(item.id)}><i className="las la-trash"></i></button>
                     </div>
-                    <a className="image" href="/product/2"><img className="img-fluid" src="./fashion/2.jpg" alt=""/></a>
+                    <Link className="image" to={`/productDetail/${item.id}`}><img className="img-fluid" src={item.image[0]} alt=""/></Link>
                     <div className="product-title">
-                        <a href="/product/2">{item.name}</a>
+                        <Link to={`/productDetail/${item.id}`}>{item.name}</Link>
                     </div>
                     <div className="compare-btn">
-                        <a href="/product/2">Select Option</a>
+                        <Link to={`/productDetail/${item.id}`}>Select Option</Link>
                     </div>
                 </td>
                 

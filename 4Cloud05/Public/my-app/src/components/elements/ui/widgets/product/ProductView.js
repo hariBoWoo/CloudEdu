@@ -26,13 +26,13 @@ export default function ProductView({categoryName}){
     : newData;
 
 
-    const handleDelete = (id) => {
-        fetch(`http://localhost:3005/wish/${id}`,{
-            method: "DELETE"
-        }).then(
-            alert("삭제되었습니다.")
-        )
-    }
+    // const handleDelete = (id) => {
+    //     fetch(`http://localhost:3005/wish/${id}`,{
+    //         method: "DELETE"
+    //     }).then(
+    //         alert("삭제되었습니다.")
+    //     )
+    // }
 
     const handlePutWishList = (id) => {
         
@@ -52,6 +52,33 @@ export default function ProductView({categoryName}){
                     image: data.image,
                     price: data.price,
                     discount: data.discount
+                }),
+            })
+        }).then(
+            alert("success")
+        )
+    }
+
+    const handlePutCompList = (id) => {
+        
+        fetch(`http://localhost:3005/product/${id}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            fetch(`http://localhost:3005/compare/`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: data.id,
+                    name: data.name,
+                    image: data.image,
+                    price: data.price,
+                    discount: data.discount,
+                    shortDescription: data.shortDescription,
+                    rating: data.rating
                 }),
             })
         }).then(
@@ -97,7 +124,7 @@ export default function ProductView({categoryName}){
                         <button 
                             className="" 
                             title={item.id} 
-                            onClick={() => handleDelete(item.id)} 
+                            onClick={() => handlePutCompList(item.id)} 
                             value={item.id}
                         >
                             <i className="las la-eye"></i>
