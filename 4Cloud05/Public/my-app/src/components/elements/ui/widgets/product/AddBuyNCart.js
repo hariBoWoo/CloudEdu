@@ -27,83 +27,58 @@ export default function AddBuyNCart({ color, size}){
 
 
     const handlePutCartList = (id) => {
-        
-        fetch(`http://localhost:3005/product/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            fetch(`http://localhost:3005/cart/`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: data.id,
-                    name: data.name,
-                    image: data.image,
-                    price: data.price,
-                    discount: data.discount,
-                    qty : count,
-                    color : color,
-                    size : size
-                }),
-                // 임의로 json 데이터를 넣을수 있다는 점 : siz와 color를 넣을수 있는 포인트 (46,47,48번째 줄)
-            })
-        }).then(
-            alert("success")
-        )
+        fetch(`http://localhost:3005/cart/`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                id: datas.id,
+                name: datas.name,
+                image: datas.image,
+                price: datas.price,
+                discount: datas.discount,
+                qty : count,
+                color : color,
+                size : size
+            }),
+        }).then( alert("success"))
     }
+
     const handlePutCompList = (id) => {
         
-        fetch(`http://localhost:3005/product/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            fetch(`http://localhost:3005/compare/`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: data.id,
-                    name: data.name,
-                    image: data.image,
-                    price: data.price,
-                    discount: data.discount,
-                    shortDescription: data.shortDescription,
-                    rating: data.rating
-                }),
-            })
-        }).then(
-            alert("success")
-        )
+        fetch(`http://localhost:3005/compare/`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                id: datas.id,
+                name: datas.name,
+                image: datas.image,
+                price: datas.price,
+                discount: datas.discount,
+                shortDescription: datas.shortDescription,
+                rating: datas.rating
+            }),
+        }).then( alert("success"))
     }
 
     const handlePutWishList = (id) => {
         
-        fetch(`http://localhost:3005/product/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            fetch(`http://localhost:3005/wish/`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: data.id,
-                    name: data.name,
-                    image: data.image,
-                    price: data.price,
-                    discount: data.discount
-                }),
-            })
-        }).then(
-            alert("success")
-        )
+        fetch(`http://localhost:3005/wish/`,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                id: datas.id,
+                name: datas.name,
+                image: datas.image,
+                price: datas.price,
+                discount: datas.discount
+            }),
+        }).then( alert("success"))
     }
     
     return(
