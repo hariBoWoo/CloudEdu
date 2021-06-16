@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function CartMain(){
 
     const [cartDatas, setCartDatas] = useState([]);
-    const [count, setCount]=useState(1);
+    const [count, setCount]=useState(cartDatas.qty);
 
     
 
@@ -56,8 +56,8 @@ export default function CartMain(){
             <td className="product-name">
             <Link to={`/productDetail/${item.id}`}>{item.name}</Link>
                 <div className="cart-item-variation">
-                    <span>Color: blue</span>
-                    <span>Size: x</span>
+                    <span>Color: {item.color}</span>
+                    <span>Size: {item.size}</span>
                 </div>
             </td>
             <td className="product-price-cart">
@@ -67,11 +67,11 @@ export default function CartMain(){
             <td className="product-quantity">
                 <div className="cart-plus-minus">
                     <button className="dec qtybutton" onClick={()=>subCount(count)}>-</button>
-                    <input className="cart-plus-minus-box" type="text" readonly="" value={count}/>
+                    <input className="cart-plus-minus-box" type="text" readonly="" value={item.qty}/>
                     <button className="inc qtybutton" onClick={()=>addCount()}>+</button>
                 </div>
             </td>
-            <td className="product-subtotal">${((item.price * (100-item.discount)/100) * count).toFixed(2)}</td>
+            <td className="product-subtotal">${((item.price * (100-item.discount)/100) * item.qty).toFixed(2)}</td>
             <td className="product-remove"><button onClick={()=>handleDelete(item.id)}><i className="fa fa-times"></i></button></td>
         </tr>
     ))

@@ -3,6 +3,18 @@ import React, {useEffect,useState} from 'react';
 export default function ColorNSize({vData, setColor, setSize}){
 
     const [isCheck, setIsCheck] = useState(false);
+    const [sizeData,setSizeData] = useState([]);
+    
+    useEffect(()=>{
+        fetch(`http://localhost:3005/size`) 
+        .then(res => {
+            return res.json();
+        })
+        .then(data =>{
+            setSizeData(data);
+            
+        });
+    },[]);
 
     return(
         <div className="pro-details-size-color">
@@ -23,10 +35,15 @@ export default function ColorNSize({vData, setColor, setSize}){
             <div className="pro-details-size">
                 <span>Size</span>
                 <div className="pro-details-size-content">
-                    <label className="pro-details-size-content--single">
-                        <input type="radio" value="x" checked=""/>
-                        <span className="size-name">x</span>
-                    </label>
+                    {
+                        sizeData.map(item =>(
+                            <label key={item.id} className="pro-details-size-content--single">
+                                <input onClick={()=> setSize(item.name)} type="radio" value={item.name} />
+                                <span className="size-name">{item.name}</span>
+                            </label>
+                        ))
+                    }
+                    
                 </div>
             </div>
         </div>

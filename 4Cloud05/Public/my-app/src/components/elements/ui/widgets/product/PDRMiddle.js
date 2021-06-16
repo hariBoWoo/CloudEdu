@@ -19,7 +19,7 @@ export default function PDRMiddle({data}){
             setVardata(data);
             
         });
-    },[process.IP, process.PORT, id]);
+    },[id]);
 
     return(
         <Fragment>
