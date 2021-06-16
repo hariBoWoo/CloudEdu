@@ -1,5 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
-import {useParams} from 'react-router-dom';import ColorNSize from "./ColorNSize";
+import {useParams} from 'react-router-dom';
+import ColorNSize from "./ColorNSize";
 import AddBuyNCart from "./AddBuyNCart";
 
 export default function PDRMiddle({data}){

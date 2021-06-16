@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import Rating from '../../Rating';
-
+import { Checkbox } from '@material-ui/core';
 
 export default function ProductView({categoryName}){
 
@@ -24,6 +24,40 @@ export default function ProductView({categoryName}){
         item => item.category.filter(single => single === categoryName)[0]
       )
     : newData;
+
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:3005/wish/${id}`,{
+            method: "DELETE"
+        }).then(
+            alert("삭제되었습니다.")
+        )
+    }
+
+    const handlePutWishList = (id) => {
+        
+        fetch(`http://localhost:3005/product/${id}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            fetch(`http://localhost:3005/wish/`,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: data.id,
+                    name: data.name,
+                    image: data.image,
+                    price: data.price,
+                    discount: data.discount
+                }),
+            })
+        }).then(
+            alert("success")
+        )
+    }
     
     // const searchData = newData.filter(index => (
     //    index.category[0] === categoryName || index.category[1] === categoryName || index.category[2] === categoryName
@@ -49,13 +83,25 @@ export default function ProductView({categoryName}){
                 </div>
                 <div className="product-action">
                     <div className="pro-same-action pro-wishlist">
-                        <button className="" title="Add to wishlist"><i className="las la-bookmark"></i></button>
+                        <button
+                            value={item.id}
+                            onClick={() => handlePutWishList(item.id)}
+                        >
+                            <i className="las la-bookmark"></i>
+                        </button>
                     </div>
                     <div className="pro-same-action pro-cart">
-                        <button disabled="" className="active">Out of Stock</button>
+                        <button disabled="" className="active">Buy</button>
                     </div>
                     <div className="pro-same-action pro-quickview">
-                        <button title="Quick View"><i className="las la-eye"></i></button>
+                        <button 
+                            className="" 
+                            title={item.id} 
+                            onClick={() => handleDelete(item.id)} 
+                            value={item.id}
+                        >
+                            <i className="las la-eye"></i>
+                        </button>
                     </div>
                 </div>
             </div>

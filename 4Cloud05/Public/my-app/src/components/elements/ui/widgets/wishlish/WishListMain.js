@@ -1,6 +1,6 @@
 import React from 'react';
 import WishListTable from './WishListTable';
-import WishListButton from './WishListButton';
+// import WishListButton from './WishListButton';
 
 export default function WishListMain(){
     return(
@@ -9,7 +9,7 @@ export default function WishListMain(){
                 <h3 className="cart-page-title">Your wishlist items</h3>
                 <WishListTable/>
                 
-                <WishListButton/>
+                {/* <WishListButton/> */}
             </div>
         </div>
     );

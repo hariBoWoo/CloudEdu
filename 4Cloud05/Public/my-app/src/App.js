@@ -11,6 +11,7 @@ import Features from './components/pages/Features/Features';
 import ProductDetail from './components/pages/ProductDetail/ProductDetail';
 import WishLish from './components/pages/wishList/WishList';
 import Compare from './components/pages/compare/Compare';
+import Cart from './components/pages/cart/Cart';
 
 import "./assets/css/animate.css";
 import "./assets/css/bootstrap.css";
@@ -41,6 +42,7 @@ return (
           <Route exact path="/productdetail/:id"><ProductDetail/></Route>
           <Route exact path="/wishlist"><WishLish/></Route>
           <Route exact path="/compare"><Compare/></Route>
+          <Route exact path="/cart"><Cart/></Route>
 
 
         </Switch>
