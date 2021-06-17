@@ -66,9 +66,9 @@
       ],
       "price": 12.45,
       "discount": 10,
-      "qty": 2,
-      "color": "brown",
-      "size": "XXL"
+      "qty": 5,
+      "color": "white",
+      "size": "S"
     },
     {
       "id": "2",
@@ -82,9 +82,9 @@
       ],
       "price": 18.5,
       "discount": 15,
-      "qty": 1,
+      "qty": 2,
       "color": "black",
-      "size": "XL"
+      "size": "M"
     }
   ],
   "wish": [

@@ -21,7 +21,7 @@ export default function Bloglist(){
         
         <div key={item.id} className="col-12 col-md-4 mb-4">
                 {/* style={{backgroundImage:{}, backgroundSize:"cover"}} */}
-            <Link to={`/blogdetail/${item.id}`}><div className="blogImg" style={{backgroundImage:`url(${item.image})`, backgroundSize:"cover"}}></div></Link>
+            <Link to={`/blogdetail/${item.id}`}><div className="blogImg" style={{backgroundImage:`url(.${item.image})`, backgroundSize:"cover"}}></div></Link>
             <div className="blogTxt">
                 <Link to={`/blogdetail/${item.id}`}><p className="blogTitle">{item.title}</p></Link>
                 <Link to={`/blogdetail/${item.author}`}><p className="blogAuth">by. {item.author}</p></Link>
