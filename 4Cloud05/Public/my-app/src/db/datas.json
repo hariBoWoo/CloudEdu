@@ -89,30 +89,17 @@
   ],
   "wish": [
     {
-      "id": "2",
-      "name": "Lorem ipsum coat",
-      "image": [
-        "/assets/img/product/fashion/2.jpg",
-        "/assets/img/product/fashion/4.jpg",
-        "/assets/img/product/fashion/5.jpg",
-        "/assets/img/product/fashion/7.jpg",
-        "/assets/img/product/fashion/9.jpg"
-      ],
-      "price": 18.5,
-      "discount": 15
-    },
-    {
-      "id": "3",
+      "id": "1",
       "name": "Lorem ipsum jacket",
       "image": [
-        "/assets/img/product/fashion/3.jpg",
         "/assets/img/product/fashion/1.jpg",
+        "/assets/img/product/fashion/3.jpg",
         "/assets/img/product/fashion/6.jpg",
         "/assets/img/product/fashion/8.jpg",
         "/assets/img/product/fashion/9.jpg"
       ],
-      "price": 17.45,
-      "discount": 40
+      "price": 12.45,
+      "discount": 10
     }
   ],
   "blog": [
@@ -181,8 +168,8 @@
     },
     {
       "id": 3,
-      "name": "Pricing",
-      "url": "/pricing"
+      "name": "Shop",
+      "url": "/productList"
     },
     {
       "id": 4,
@@ -229,6 +216,9 @@
   ],
   "category": [
     {
+      "id": 0,
+      "name": "All Categories"
+    },{
       "id": 1,
       "name": "fashion"
     },
@@ -242,7 +232,31 @@
     },
     {
       "id": 4,
-      "name": "boy"
+      "name": "electronics"
+    },
+    {
+      "id": 5,
+      "name": "furniture"
+    },
+    {
+      "id": 6,
+      "name": "plant"
+    },
+    {
+      "id": 7,
+      "name": "organic food"
+    },
+    {
+      "id": 8,
+      "name": "flower"
+    },
+    {
+      "id": 9,
+      "name": "book"
+    },
+    {
+      "id": 10,
+      "name": "cosmetics"
     }
   ],
   "brand": [

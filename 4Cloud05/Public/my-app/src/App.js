@@ -12,7 +12,7 @@ import ProductDetail from './components/pages/ProductDetail/ProductDetail';
 import WishLish from './components/pages/wishList/WishList';
 import Compare from './components/pages/compare/Compare';
 import Cart from './components/pages/cart/Cart';
-
+import ProductList from './components/pages/productList/ProductList';
 import "./assets/css/animate.css";
 import "./assets/css/bootstrap.css";
 import "./assets/css/googlefont.css";
@@ -20,7 +20,7 @@ import "./assets/css/mystyle1.css";
 import "./assets/css/style.css";
 import "./assets/icons8/css/line-awesome.min.css";
 import ToTop from './utillitles/ToTop';
-
+import MyAccount from './components/pages/myAccount/MyAccount';
 // import "./assets/css/layout.css";
 
 
@@ -43,6 +43,8 @@ return (
           <Route exact path="/wishlist"><WishLish/></Route>
           <Route exact path="/compare"><Compare/></Route>
           <Route exact path="/cart"><Cart/></Route>
+          <Route exact path="/productList"><ProductList/></Route>
+          <Route exact path="/myaccount"><MyAccount/></Route>
 
 
         </Switch>
