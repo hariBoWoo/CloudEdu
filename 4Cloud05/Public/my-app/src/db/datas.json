@@ -1,4 +1,38 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "userId": "",
+      "password": "",
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "id": 2,
+      "userId": "hihihihiw1",
+      "password": "dkanrjsk123!",
+      "name": "dkanrjsk",
+      "email": "dkanrjsk@gmal.com",
+      "phone": "102938294729"
+    },
+    {
+      "id": 3,
+      "userId": "hih2918",
+      "password": "qwer1234!",
+      "name": "너무해",
+      "email": "qwer@md.co",
+      "phone": "01029849383"
+    },
+    {
+      "id": 4,
+      "userId": "minson",
+      "password": "qwer1234!",
+      "name": "minsonkwon",
+      "email": "qwer@doc.lgon",
+      "phone": "01039849101"
+    }
+  ],
   "compare": [
     {
       "id": "2",
@@ -218,7 +252,8 @@
     {
       "id": 0,
       "name": "All Categories"
-    },{
+    },
+    {
       "id": 1,
       "name": "fashion"
     },
