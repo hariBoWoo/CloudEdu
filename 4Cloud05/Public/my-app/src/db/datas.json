@@ -1,38 +1,5 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "userId": "",
-      "password": "",
-      "name": "",
-      "email": "",
-      "phone": ""
-    },
-    {
-      "id": 2,
-      "userId": "hihihihiw1",
-      "password": "dkanrjsk123!",
-      "name": "dkanrjsk",
-      "email": "dkanrjsk@gmal.com",
-      "phone": "102938294729"
-    },
-    {
-      "id": 3,
-      "userId": "hih2918",
-      "password": "qwer1234!",
-      "name": "너무해",
-      "email": "qwer@md.co",
-      "phone": "01029849383"
-    },
-    {
-      "id": 4,
-      "userId": "minson",
-      "password": "qwer1234!",
-      "name": "minsonkwon",
-      "email": "qwer@doc.lgon",
-      "phone": "01039849101"
-    }
-  ],
+  "users": [],
   "compare": [
     {
       "id": "2",
@@ -123,14 +90,14 @@
   ],
   "wish": [
     {
-      "id": "1",
-      "name": "Lorem ipsum jacket",
+      "id": "88",
+      "name": "Lorem ipsum kids one",
       "image": [
-        "/assets/img/product/fashion/1.jpg",
-        "/assets/img/product/fashion/3.jpg",
-        "/assets/img/product/fashion/6.jpg",
-        "/assets/img/product/fashion/8.jpg",
-        "/assets/img/product/fashion/9.jpg"
+        "/assets/img/product/fashion/23.jpg",
+        "/assets/img/product/fashion/24.jpg",
+        "/assets/img/product/fashion/25.jpg",
+        "/assets/img/product/fashion/26.jpg",
+        "/assets/img/product/fashion/27.jpg"
       ],
       "price": 12.45,
       "discount": 10

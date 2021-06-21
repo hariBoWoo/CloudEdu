@@ -22,8 +22,9 @@ import "./assets/icons8/css/line-awesome.min.css";
 import ToTop from './utillitles/ToTop';
 import MyAccount from './components/pages/myAccount/MyAccount';
 // import "./assets/css/layout.css";
-
-
+import ReduxSample from './components/pages/reduxsample/ReduxSample';
+import {Provider} from 'react-redux';
+import store from './redux/store'; 
 
 import {BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -45,7 +46,9 @@ return (
           <Route exact path="/cart"><Cart/></Route>
           <Route exact path="/productList"><ProductList/></Route>
           <Route exact path="/myaccount"><MyAccount/></Route>
-
+          <Provider store={store}>
+            <Route exact path='/reduxsample'> <ReduxSample/></Route>
+          </Provider>
 
         </Switch>
       </ToTop>
